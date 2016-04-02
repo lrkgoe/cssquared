@@ -19,6 +19,10 @@ public class Event implements Comparable<Event> {
     private int phoneNumber;
 
 
+
+    private int followers;
+
+
     public Event(String name, String streetAddress, int zip, String summary, Calendar date,
                  String email, int phoneNumber) {
         this.streetAddress = streetAddress;
@@ -82,6 +86,14 @@ public class Event implements Comparable<Event> {
 
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public int getFollowers() {
+        return followers;
+    }
+
+    public void addFollower() {
+        followers++;
     }
 
     public int compareTo(Event b) {
