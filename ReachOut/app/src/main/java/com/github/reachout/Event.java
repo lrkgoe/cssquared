@@ -1,7 +1,8 @@
 package com.github.reachout;
 import java.util.Comparator;
 import java.util.Date;
-import java.lang.Object;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 /**
@@ -13,12 +14,12 @@ public class Event implements Comparable<Event> {
     private String streetAddress;
     private int zip;
     private String summary;
-    private Date date;
+    private Calendar date;
     private String email;
     private int phoneNumber;
 
 
-    public Event(String name, String streetAddress, int zip, String summary, Date date,
+    public Event(String name, String streetAddress, int zip, String summary, Calendar date,
                  String email, int phoneNumber) {
         this.streetAddress = streetAddress;
         this.zip = zip;
@@ -40,7 +41,7 @@ public class Event implements Comparable<Event> {
         return summary;
     }
 
-    public Date getDate() {
+    public Calendar getDate() {
         return date;
     }
 
@@ -62,7 +63,7 @@ public class Event implements Comparable<Event> {
         this.summary = summary;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Calendar date) {
         this.date = date;
     }
 
