@@ -1,5 +1,6 @@
 package com.github.reachout;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,12 +14,18 @@ public class HomePageActivity extends AppCompatActivity {
     private EditText passwordView;
     private String email;
     private String password;
-    private User dummyUser;
+    private static User globalUser;
+    private View focusView;
+    private static UserManager userList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        //create a UserManager for the app
+        userList = new UserManager();
+
 
         //click sign in button
         Button loginButton = (Button) findViewById(R.id.sign_in_button);
@@ -32,12 +39,12 @@ public class HomePageActivity extends AppCompatActivity {
                 //get password from text field
                 passwordView = (EditText) findViewById(R.id.password_editText);
                 password = passwordView.getText().toString();
-                User dummyUser = new User(email, password, 0);
-                attemptLogin(dummyUser);
+                globalUser = new User(email, password, 0);
+                attemptLogin(globalUser);
             }
         });
 
-        //click sign in button
+        //click register button
         Button registerButton = (Button) findViewById(R.id.register_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +56,19 @@ public class HomePageActivity extends AppCompatActivity {
                 //get password from text field
                 passwordView = (EditText) findViewById(R.id.password_editText);
                 password = passwordView.getText().toString();
-                dummyUser = new User(email, password, 0);
-                attemptRegister();
+                globalUser = new User(email, password, 0);
+                attemptRegister(globalUser);
+            }
+        });
+
+        //click guest button
+        Button guestButton = (Button) findViewById(R.id.use_as_guest_button);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                globalUser = new User(null, null, 0);
+                Intent i = new Intent(HomePageActivity.this, UserProfileActivity.class);
+                startActivity(i);
             }
         });
 
@@ -58,15 +76,14 @@ public class HomePageActivity extends AppCompatActivity {
     }
 
     /**
-     * Attempts to log in with given credentials.
-     * must make sure both email and password are valid
+     * Makes sure user enters info for both fields
      */
-    private void attemptLogin(User user) {
+    private boolean aFieldIsEmpty() {
         //reset errors
         emailView.setError(null);
         passwordView.setError(null);
 
-        View focusView = null;
+        focusView = null;
         boolean cancel = false;
 
         //check to see if user entered a pass
@@ -79,17 +96,63 @@ public class HomePageActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(email)) {
             emailView.setError("Enter an email address.");
         }
+        return cancel;
+    }
 
-        //check to see if user exists
-
-
+    /**
+     * Attempts to log in with given credentials.
+     * must make sure both email and password are valid
+     */
+    private void attemptLogin(User user) {
+        if (aFieldIsEmpty()) {
+            //don't proceed
+            focusView.requestFocus();
+        } else if (!userList.contains(user)) {
+            //don't proceed, user does not exist
+            emailView.setError("Invalid email and/or password entered.");
+            focusView = emailView;
+            focusView.requestFocus();
+        } else {
+            globalUser = userList.getUser(email);
+            Intent i = new Intent(HomePageActivity.this, UserProfileActivity.class);
+            startActivity(i);
+        }
     }
 
     /**
      * Attempts to register "new" user
      * must make sure email is not already in use
      */
-    private void attemptRegister() {
+    private void attemptRegister(User user) {
+        if (aFieldIsEmpty()) {
+            //don't proceed
+            focusView.requestFocus();
+        } else if (userList.contains(user)) {
+            //don't proceed, user already exists
+            emailView.setError("This email is already registered to a user.");
+            focusView = emailView;
+            focusView.requestFocus();
+        } else if (!isValidEmail(email)) {
+            //invalid email, don't proceed
+            emailView.setError("This email is invalid.");
+            focusView = emailView;
+            focusView.requestFocus();
+        } else {
+            userList.add(globalUser);
+            Intent i = new Intent(HomePageActivity.this, UserProfileActivity.class);
+            startActivity(i);
+        }
+    }
 
+    private boolean isValidEmail(String email) {
+        return email.contains("@");
+    }
+
+    public static UserManager getUserManager() {
+        return userList;
+    }
+
+    public static User getGlobalUser() {
+        return globalUser;
     }
 }

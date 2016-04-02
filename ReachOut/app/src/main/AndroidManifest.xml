@@ -12,7 +12,8 @@
         <activity android:name=".ListOfEventsActivity" />
         <activity android:name=".EventDetailsActivity" />
         <activity android:name=".StartedEventsActivity" />
-        <activity android:name=".SignedUpEventsActivity"></activity>
+        <activity android:name=".SignedUpEventsActivity" />
+        <activity android:name=".UserProfileActivity"></activity>
     </application>
 
 </manifest>
