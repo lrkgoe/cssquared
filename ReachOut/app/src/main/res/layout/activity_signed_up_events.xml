@@ -8,5 +8,21 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.github.reachout.SignedUpEventsActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Followed Events"
+        android:id="@+id/event_list_textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/followed_events_listView"
+        android:layout_below="@+id/event_list_textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
 </RelativeLayout>

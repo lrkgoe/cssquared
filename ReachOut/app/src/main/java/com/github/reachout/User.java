@@ -35,6 +35,34 @@ public class User {
         return zipCode;
     }
 
+    public List<Event> getEventsCreated() {
+        return eventsCreated;
+    }
+
+    public String[] stringifyFollowedEvents() {
+        String[] eventArr = new String[eventsFollowed.size()];
+        for (int i = 0; i < eventsFollowed.size(); i++) {
+            eventArr[i] = eventsFollowed.get(i).getName() + "\n\tDate: "
+                    + eventsFollowed.get(i).getDate();
+        }
+        return eventArr;
+    }
+
+    public String[] stringifyCreatedEvents() {
+        String[] eventArr = new String[eventsCreated.size()];
+        for (int i = 0; i < eventsCreated.size(); i++) {
+            eventArr[i] = eventsCreated.get(i).getName() + "\n\tDate: "
+                    + eventsCreated.get(i).getDate();
+        }
+        return eventArr;
+    }
+
+
+    public List<Event> getEventsFollowed() {
+        return eventsFollowed;
+    }
+
+
     public void setEmail(String email) {
         this.email = email;
     }
