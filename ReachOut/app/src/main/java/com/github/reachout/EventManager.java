@@ -18,6 +18,10 @@ public class EventManager {
         Collections.sort(eventList);
     }
 
+    public ArrayList<Event> get() {
+        return eventList;
+    }
+
     public void remove(Event event) {
         eventList.remove(event);
     }
