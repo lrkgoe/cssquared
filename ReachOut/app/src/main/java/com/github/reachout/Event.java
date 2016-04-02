@@ -7,7 +7,7 @@ import java.lang.Object;
 /**
  * Created by Yash on 4/2/2016.
  */
-public class Event implements Comparable<Date> {
+public class Event implements Comparable<Event> {
 
     private String streetAddress;
     private String town;
@@ -63,8 +63,40 @@ public class Event implements Comparable<Date> {
         return phoneNumber;
     }
 
-    public int compareTo(Date b) {
-        return this.compareTo(b);
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setZip(int zip) {
+        this.zip = zip;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public int compareTo(Event b) {
+        return this.getDate().compareTo(b.getDate());
     }
 
 }
