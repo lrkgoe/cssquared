@@ -9,6 +9,7 @@ import java.lang.Object;
  */
 public class Event implements Comparable<Event> {
 
+    private String name;
     private String streetAddress;
     private String town;
     private String country;
@@ -19,7 +20,7 @@ public class Event implements Comparable<Event> {
     private int phoneNumber;
 
 
-    public Event(String streetAddress, String town, String country, int zip, String summary,
+    public Event(String name, String streetAddress, String town, String country, int zip, String summary,
                  Date date, String email, int phoneNumber) {
         this.streetAddress = streetAddress;
         this.town = town;
@@ -31,9 +32,9 @@ public class Event implements Comparable<Event> {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getStreetAddress() {
-        return streetAddress;
-    }
+    public String getName() { return name; }
+
+    public String getStreetAddress() { return streetAddress; }
 
     public String getTown() {
         return town;
@@ -62,6 +63,8 @@ public class Event implements Comparable<Event> {
     public int getPhoneNumber() {
         return phoneNumber;
     }
+
+    public void setName(String name) { this.name = name; }
 
     public void setStreetAddress(String streetAddress) {
         this.streetAddress = streetAddress;
