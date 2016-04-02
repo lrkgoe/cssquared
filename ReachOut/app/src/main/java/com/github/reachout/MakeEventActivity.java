@@ -26,6 +26,7 @@ public class MakeEventActivity extends AppCompatActivity {
                 EditText summary = (EditText) findViewById(R.id.summary_editText);
                 EditText date = (EditText) findViewById(R.id.date_editText);
                 EditText time = (EditText) findViewById(R.id.time_editText);
+                //User current = HomePageActivity.getGlobalUser();
             }
 
         });
