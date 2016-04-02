@@ -36,7 +36,7 @@ public class MakeEventActivity extends AppCompatActivity {
                 int phone = Integer.parseInt(phoneNumber.getText().toString());
                 String eventSummary = summary.getText().toString();
                 int dateNo = Integer.parseInt(date.getText().toString());
-                int monthNo = Integer.parseInt(month.getText().toString());
+                int monthNo = Integer.parseInt(month.getText().toString()) - 1;
                 int yearNo = Integer.parseInt(year.getText().toString());
                 Calendar fullDate = new GregorianCalendar(yearNo, monthNo, dateNo);
                 Event newEvent = new Event(name, streetNo, zip, eventSummary, fullDate, emailAddress, phone);

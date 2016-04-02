@@ -2,15 +2,15 @@ package com.github.reachout;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * Created by Yash on 4/2/2016.
  */
-public class Calendar {
+public class EventCalendar {
     private ArrayList<Event> eventList;
 
-    public Calendar() {
+    public EventCalendar() {
     }
 
     public void add(Event event) {
@@ -22,7 +22,7 @@ public class Calendar {
         eventList.remove(event);
     }
 
-    public void update(Event event, Date newDate) {
+    public void update(Event event, Calendar newDate) {
         int eventIndex = eventList.indexOf(event);
         eventList.get(eventIndex).setDate(newDate);
     }
