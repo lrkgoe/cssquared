@@ -9,10 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".UserRegistration" />
-        <activity android:name=".MainPage" />
-        <activity android:name=".EventPage" />
-        <activity android:name=".MakeEvent"></activity>
+        <activity android:name=".MainPageActivity" />
+        <activity android:name=".EventPageActivity" />
+        <activity android:name=".MakeEventActivity"></activity>
     </application>
 
 </manifest>
