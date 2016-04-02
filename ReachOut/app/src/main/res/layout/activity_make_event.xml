@@ -25,15 +25,72 @@
 
     <EditText
         android:layout_width="wrap_content"
-        android:hint="Event Address"
+        android:hint="Name of Event"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="12"
-        android:id="@+id/event_address_editText"
+        android:id="@+id/name_editText"
+        android:autoText="false"
         android:layout_below="@+id/title_textView"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:autoText="false" />
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Street #"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="4"
+        android:id="@+id/street_number_editText"
+        android:autoText="false"
+        android:layout_alignTop="@+id/house_address_editText"
+        android:layout_toStartOf="@+id/house_address_editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="House Address"
+        android:ems="8"
+        android:id="@+id/house_address_editText"
+        android:layout_below="@+id/name_editText"
+        android:layout_marginTop="15dp"
+        android:layout_alignStart="@+id/email_editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Email (optional)"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="8"
+        android:id="@+id/email_editText"
+        android:autoText="false"
+        android:layout_alignTop="@+id/zip_code_editText"
+        android:layout_toEndOf="@+id/zip_code_editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Zip Code"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="4"
+        android:id="@+id/zip_code_editText"
+        android:autoText="false"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/street_number_editText"
+        android:layout_alignStart="@+id/summary_editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Phone Number"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="12"
+        android:id="@+id/phone_number_editText"
+        android:autoText="false"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/zip_code_editText"
+        android:layout_alignStart="@+id/summary_editText" />
+
 
     <EditText
         android:layout_width="wrap_content"
@@ -42,7 +99,7 @@
         android:inputType="textMultiLine"
         android:ems="12"
         android:id="@+id/summary_editText"
-        android:layout_below="@+id/event_address_editText"
+        android:layout_below="@+id/phone_number_editText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
     />
@@ -52,7 +109,7 @@
         android:hint="Date"
         android:layout_height="wrap_content"
         android:inputType="date"
-        android:ems="12"
+        android:ems="6"
         android:id="@+id/date_editText"
         android:layout_below="@+id/summary_editText"
         android:layout_centerVertical="true"
@@ -65,11 +122,10 @@
         android:hint="Time"
         android:layout_height="wrap_content"
         android:inputType="time"
-        android:ems="12"
+        android:ems="6"
         android:id="@+id/time_editText"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/date_editText"
-        android:layout_alignStart="@+id/date_editText" />
+        android:layout_alignTop="@+id/date_editText"
+        android:layout_toEndOf="@+id/date_editText" />
 
     <Button
         android:layout_width="wrap_content"
@@ -79,7 +135,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_below="@+id/time_editText"
         android:layout_alignEnd="@+id/time_editText"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="15dp"
         />
 
 
