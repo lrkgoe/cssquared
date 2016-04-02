@@ -42,7 +42,16 @@ public class Event implements Comparable<Event> {
     }
 
     public Calendar getDate() {
+
         return date;
+    }
+
+    public String getDateString() {
+        int month = this.getDate().get(Calendar.MONTH);
+        int day = this.getDate().get(Calendar.DAY_OF_MONTH);
+        int year = this.getDate().get(Calendar.YEAR);
+        return month + "/" + day + "/" + year;
+
     }
 
     public String getEmail() { return email; }
