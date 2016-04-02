@@ -11,8 +11,6 @@ public class Event implements Comparable<Event> {
 
     private String name;
     private String streetAddress;
-    private String town;
-    private String country;
     private int zip;
     private String summary;
     private Date date;
@@ -20,11 +18,9 @@ public class Event implements Comparable<Event> {
     private int phoneNumber;
 
 
-    public Event(String name, String streetAddress, String town, String country, int zip, String summary,
-                 Date date, String email, int phoneNumber) {
+    public Event(String name, String streetAddress, int zip, String summary, Date date,
+                 String email, int phoneNumber) {
         this.streetAddress = streetAddress;
-        this.town = town;
-        this.country = country;
         this.zip = zip;
         this.summary = summary;
         this.date = date;
@@ -35,14 +31,6 @@ public class Event implements Comparable<Event> {
     public String getName() { return name; }
 
     public String getStreetAddress() { return streetAddress; }
-
-    public String getTown() {
-        return town;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 
     public int getZip() {
         return zip;
@@ -56,9 +44,7 @@ public class Event implements Comparable<Event> {
         return date;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() { return email; }
 
     public int getPhoneNumber() {
         return phoneNumber;
@@ -66,17 +52,7 @@ public class Event implements Comparable<Event> {
 
     public void setName(String name) { this.name = name; }
 
-    public void setStreetAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
-    }
-
-    public void setTown(String town) {
-        this.town = town;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
+    public void setStreetAddress(String streetAddress) { this.streetAddress = streetAddress; }
 
     public void setZip(int zip) {
         this.zip = zip;
