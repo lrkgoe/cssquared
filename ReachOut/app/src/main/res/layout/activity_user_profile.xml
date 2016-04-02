@@ -9,4 +9,48 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.github.reachout.UserProfileActivity">
 
+
+
+    <Button
+        android:ems="10"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Followed Events"
+        android:id="@+id/followed_events_button"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="162dp" />
+
+    <Button
+        android:ems="10"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event List"
+        android:id="@+id/event_list_button"
+        android:layout_below="@+id/created_event_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:ems="10"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created Events"
+        android:id="@+id/created_events_button"
+        android:layout_below="@+id/followed_events_button"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Welcome to the Menu Broh"
+        android:id="@+id/Welcome"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:textSize="13pt"
+        android:fontFamily="Comic Sans"/>
 </RelativeLayout>
