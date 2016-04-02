@@ -17,6 +17,7 @@ public class HomePageActivity extends AppCompatActivity {
     private static User globalUser;
     private View focusView;
     private static UserManager userList;
+    private static EventManager eventList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class HomePageActivity extends AppCompatActivity {
         //create a UserManager for the app
         userList = new UserManager();
 
+        eventList = new EventManager();
 
         //click sign in button
         Button loginButton = (Button) findViewById(R.id.sign_in_button);
@@ -154,5 +156,9 @@ public class HomePageActivity extends AppCompatActivity {
 
     public static User getGlobalUser() {
         return globalUser;
+    }
+
+    public static EventManager getEventManager() {
+        return eventList;
     }
 }

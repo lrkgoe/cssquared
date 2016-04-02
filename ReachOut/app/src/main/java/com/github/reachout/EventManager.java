@@ -25,4 +25,16 @@ public class EventManager {
     public void remove(Event event) {
         eventList.remove(event);
     }
+
+    public String[] toArray() {
+        String[] eventArr = new String[eventList.size()];
+        for (int i = 0; i < eventList.size(); i++) {
+            eventArr[i] = eventList.get(i).getName() + "\n\tDate: " + eventList.get(i).getDate();
+        }
+        return eventArr;
+    }
+
+    public Event getEventAt(int index) {
+        return eventList.get(index);
+    }
 }
