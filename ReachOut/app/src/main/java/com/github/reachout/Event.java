@@ -14,21 +14,26 @@ public class Event implements Comparable<Event> {
     private String streetAddress;
     private int zip;
     private String summary;
-    private Calendar date;
+    private Calendar fullDate;
     private String email;
     private long phoneNumber;
 
 
 
+    private int date;
+    private int month;
+    private int year;
     private int followers;
 
-
-    public Event(String name, String streetAddress, int zip, String summary, Calendar date,
-                 String email, long phoneNumber) {
+    public Event(String name, String streetAddress, int zip, String summary, int date, int month,
+                 int year, String email, long phoneNumber) {
         this.streetAddress = streetAddress;
         this.zip = zip;
         this.summary = summary;
         this.date = date;
+        this.month = month;
+        this.year = year;
+        this.fullDate = new GregorianCalendar(date, month, year);
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
@@ -47,14 +52,31 @@ public class Event implements Comparable<Event> {
 
     public Calendar getDate() {
 
-        return date;
+        return fullDate;
+    }
+
+    public void setDate(int date) {
+        this.date = date;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public String getDateString() {
-        int month = this.getDate().get(Calendar.MONTH);
-        int day = this.getDate().get(Calendar.DAY_OF_MONTH);
-        int year = this.getDate().get(Calendar.YEAR);
-        return month + "/" + day + "/" + year;
+                return month + "/" + date + "/" + year;
 
     }
 
@@ -77,7 +99,7 @@ public class Event implements Comparable<Event> {
     }
 
     public void setDate(Calendar date) {
-        this.date = date;
+        this.fullDate = date;
     }
 
     public void setEmail(String email) {
