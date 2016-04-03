@@ -18,27 +18,33 @@ public class EventDetailsActivity extends AppCompatActivity {
         name.setText(ListOfEventsActivity.getCurrentEvent().getName());
 
         TextView date = (TextView) findViewById(R.id.date_textView);
-        date.setText("Date: " + ListOfEventsActivity.getCurrentEvent().getDateString());
+        String dateString = "Date: " + ListOfEventsActivity.getCurrentEvent().getDateString();
+        date.setText(dateString);
 
         TextView address = (TextView) findViewById(R.id.address_textView);
-        address.setText("Address: " + ListOfEventsActivity.getCurrentEvent().getStreetAddress()
-            + ", " + ListOfEventsActivity.getCurrentEvent().getZip());
+        String addressString = "Address: " + ListOfEventsActivity.getCurrentEvent().getStreetAddress()
+                + ", " + ListOfEventsActivity.getCurrentEvent().getZip();
+        address.setText(addressString);
 
         TextView summary = (TextView) findViewById(R.id.summary_textView);
         summary.setText(ListOfEventsActivity.getCurrentEvent().getSummary());
 
         TextView contact = (TextView) findViewById(R.id.contact_textView);
         String email = ListOfEventsActivity.getCurrentEvent().getEmail();
+        String contactString;
         if (email.isEmpty()) {
-            contact.setText("Phone: " + ListOfEventsActivity.getCurrentEvent().getPhoneNumber());
+            contactString = "Phone: " + ListOfEventsActivity.getCurrentEvent().getPhoneNumber();
+            contact.setText(contactString);
         } else {
-            contact.setText("Email: " + email
-                    + "\nPhone: " + ListOfEventsActivity.getCurrentEvent().getPhoneNumber());
+            contactString = "Email: " + email
+                    + "\nPhone: " + ListOfEventsActivity.getCurrentEvent().getPhoneNumber();
+            contact.setText(contactString);
         }
 
         TextView numFollows = (TextView) findViewById(R.id.number_followers_textView);
-        numFollows.setText("Number of followers: "
-                + ListOfEventsActivity.getCurrentEvent().getFollowers());
+        String followersString = "Number of followers: "
+                + ListOfEventsActivity.getCurrentEvent().getFollowers();
+        numFollows.setText(followersString);
 
         //click follow button
         Button followButton = (Button) findViewById(R.id.use_as_guest_button);

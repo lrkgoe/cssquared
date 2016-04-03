@@ -39,9 +39,9 @@ public class MakeEventActivity extends AppCompatActivity {
                 int dateNo = Integer.parseInt(date.getText().toString());
                 int monthNo = Integer.parseInt(month.getText().toString()) - 1;
                 int yearNo = Integer.parseInt(year.getText().toString());
-                Calendar fullDate = new GregorianCalendar();
-                fullDate.set(yearNo, monthNo, dateNo);
-                Event newEvent = new Event(name, streetNo, zip, eventSummary, fullDate, emailAddress, phone);
+                //Calendar fullDate = new GregorianCalendar();
+                //fullDate.set(yearNo, monthNo, dateNo);
+                Event newEvent = new Event(name, streetNo, zip, eventSummary, dateNo, monthNo, yearNo, emailAddress, phone);
                 User current = HomePageActivity.getGlobalUser();
                 current.addNewEvent(newEvent);
                 EventManager manage = HomePageActivity.getEventManager();
