@@ -47,6 +47,9 @@ public class EventDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 HomePageActivity.getGlobalUser().addFollowedEvent(ListOfEventsActivity.getCurrentEvent());
                 ListOfEventsActivity.getCurrentEvent().addFollower();
+                Intent intent = new Intent(EventDetailsActivity.this, ListOfEventsActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

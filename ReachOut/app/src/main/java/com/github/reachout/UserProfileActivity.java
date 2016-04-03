@@ -20,6 +20,7 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(UserProfileActivity.this, SignedUpEventsActivity.class);
                 startActivity(i);
+                finish();
             }
         });
         createdEvents.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +28,7 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(UserProfileActivity.this, StartedEventsActivity.class);
                 startActivity(i);
+                finish();
             }
         });
         eventList.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +36,7 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(UserProfileActivity.this, ListOfEventsActivity.class);
                 startActivity(i);
+                finish();
             }
         });
     }
