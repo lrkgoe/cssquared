@@ -27,6 +27,7 @@ public class Event implements Comparable<Event> {
 
     public Event(String name, String streetAddress, int zip, String summary, int date, int month,
                  int year, String email, long phoneNumber) {
+        this.name = name;
         this.streetAddress = streetAddress;
         this.zip = zip;
         this.summary = summary;
