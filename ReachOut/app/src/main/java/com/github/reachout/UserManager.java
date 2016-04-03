@@ -10,7 +10,7 @@ public class UserManager {
     private static ArrayList<User> userList;
 
     public UserManager() {
-
+        userList = new ArrayList<>();
     }
 
     public void add(User user) {
