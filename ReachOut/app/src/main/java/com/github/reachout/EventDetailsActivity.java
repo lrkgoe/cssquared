@@ -49,7 +49,6 @@ public class EventDetailsActivity extends AppCompatActivity {
                 ListOfEventsActivity.getCurrentEvent().addFollower();
                 Intent intent = new Intent(EventDetailsActivity.this, ListOfEventsActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 

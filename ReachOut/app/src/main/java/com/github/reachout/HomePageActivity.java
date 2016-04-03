@@ -71,7 +71,7 @@ public class HomePageActivity extends AppCompatActivity {
                 globalUser = new User(null, null, 0);
                 Intent i = new Intent(HomePageActivity.this, ListOfEventsActivity.class);
                 startActivity(i);
-                finish();
+
             }
         });
 
