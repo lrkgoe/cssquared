@@ -69,9 +69,6 @@ public class HomePageActivity extends AppCompatActivity {
                 passwordView = (EditText) findViewById(R.id.password_editText);
                 password = passwordView.getText().toString();
                 globalUser = new User(email, password, 0);
-                if (globalUser == null) {
-                    throw new Error("1");
-                }
                 attemptRegister();
             }
         });
@@ -82,9 +79,6 @@ public class HomePageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 globalUser = new User(null, null, 0);
-                if (globalUser == null) {
-                    throw new Error("2");
-                }
                 Intent i = new Intent(HomePageActivity.this, ListOfEventsActivity.class);
                 startActivity(i);
 
@@ -134,10 +128,7 @@ public class HomePageActivity extends AppCompatActivity {
             focusView = emailView;
             focusView.requestFocus();
         } else {
-            globalUser = userList.getUser(email);
-            if (globalUser == null) {
-                throw new Error("3");
-            }
+            globalUser = userList.getUser(globalUser);
             Intent i = new Intent(HomePageActivity.this, UserProfileActivity.class);
             startActivity(i);
         }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Yash on 4/2/2016.
+ * A user of ReachOut
  */
 public class User {
 
@@ -78,8 +78,8 @@ public class User {
     public boolean equals(Object o) {
         if(o != null && o instanceof User) {
             User compare = (User) o;
-            return this.getEmail().equals(compare.getEmail())
-                    && this.getPassword().equals(compare.getPassword());
+            return email.equals(compare.email)
+                    && password.equals(compare.password);
         }
         return false;
 

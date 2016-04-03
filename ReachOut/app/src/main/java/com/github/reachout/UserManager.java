@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by Heather on 4/2/2016.
+ * Mock db for Users
  */
 public class UserManager {
     private static ArrayList<User> userList;
@@ -17,10 +17,10 @@ public class UserManager {
         userList.add(user);
     }
 
-    public User getUser(String email) {
-        for (User u : userList) {
-            if (u != null && u.getEmail().equals(email)) {
-                return u;
+    public User getUser(User user) {
+        for (int i = 0; i < userList.size(); i++) {
+            if (userList.get(i).equals(user)) {
+                return userList.get(i);
             }
         }
         return null;

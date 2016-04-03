@@ -9,8 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class StartedEventsActivity extends AppCompatActivity {
-    private ListView eventList;
-    private String[] events;
     private static Event currentEvent;
 
     @Override
@@ -20,11 +18,11 @@ public class StartedEventsActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras();
 
-        events = HomePageActivity.getGlobalUser().stringifyCreatedEvents();
+        String[] events = HomePageActivity.getGlobalUser().stringifyCreatedEvents();
 
-        eventList = (ListView) findViewById(R.id.created_events_listView);
+        ListView eventList = (ListView) findViewById(R.id.created_events_listView);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(StartedEventsActivity.this, R.layout.activity_started_events, events);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(StartedEventsActivity.this, R.layout.followed_events_text_view, events);
 
         eventList.setClickable(true);
 

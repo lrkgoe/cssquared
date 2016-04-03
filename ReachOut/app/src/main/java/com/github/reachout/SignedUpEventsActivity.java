@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 public class SignedUpEventsActivity extends AppCompatActivity {
 
-    private ListView eventList;
-    private String[] events;
     private static Event currentEvent;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +20,11 @@ public class SignedUpEventsActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras();
 
-        events = HomePageActivity.getGlobalUser().stringifyFollowedEvents();
+        String[] events = HomePageActivity.getGlobalUser().stringifyFollowedEvents();
 
-        eventList = (ListView) findViewById(R.id.followed_events_listView);
+        ListView eventList = (ListView) findViewById(R.id.followed_events_listView);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(SignedUpEventsActivity.this, R.layout.activity_signed_up_events, events);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(SignedUpEventsActivity.this, R.layout.started_events_text_view, events);
 
         eventList.setClickable(true);
 
