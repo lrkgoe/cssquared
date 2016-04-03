@@ -42,7 +42,7 @@ public class MakeEventActivity extends AppCompatActivity {
                 //Calendar fullDate = new GregorianCalendar();
                 //fullDate.set(yearNo, monthNo, dateNo);
                 Event newEvent = new Event(name, streetNo, zip, eventSummary, dateNo, monthNo, yearNo, emailAddress, phone);
-                User current = HomePageActivity.getGlobalUser();
+                User current = new User("@", "@", 12345);
                 current.addNewEvent(newEvent);
                 EventManager manage = HomePageActivity.getEventManager();
                 manage.add(newEvent);
