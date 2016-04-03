@@ -42,13 +42,13 @@ public class HomePageActivity extends AppCompatActivity {
                 passwordView = (EditText) findViewById(R.id.password_editText);
                 password = passwordView.getText().toString();
                 globalUser = new User(email, password, 0);
-                attemptLogin(globalUser);
+                attemptLogin();
             }
         });
 
         //click register button
         Button registerButton = (Button) findViewById(R.id.register_button);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //get username from text field
@@ -59,7 +59,7 @@ public class HomePageActivity extends AppCompatActivity {
                 passwordView = (EditText) findViewById(R.id.password_editText);
                 password = passwordView.getText().toString();
                 globalUser = new User(email, password, 0);
-                attemptRegister(globalUser);
+                attemptRegister();
             }
         });
 
@@ -98,6 +98,8 @@ public class HomePageActivity extends AppCompatActivity {
         //check to see if user entered an email
         if (TextUtils.isEmpty(email)) {
             emailView.setError("Enter an email address.");
+            focusView = passwordView;
+            cancel = true;
         }
         return cancel;
     }
@@ -106,11 +108,11 @@ public class HomePageActivity extends AppCompatActivity {
      * Attempts to log in with given credentials.
      * must make sure both email and password are valid
      */
-    private void attemptLogin(User user) {
+    private void attemptLogin() {
         if (aFieldIsEmpty()) {
             //don't proceed
             focusView.requestFocus();
-        } else if (!userList.contains(user)) {
+        } else if (!userList.contains(globalUser)) {
             //don't proceed, user does not exist
             emailView.setError("Invalid email and/or password entered.");
             focusView = emailView;
@@ -126,11 +128,11 @@ public class HomePageActivity extends AppCompatActivity {
      * Attempts to register "new" user
      * must make sure email is not already in use
      */
-    private void attemptRegister(User user) {
+    private void attemptRegister() {
         if (aFieldIsEmpty()) {
             //don't proceed
             focusView.requestFocus();
-        } else if (userList.contains(user)) {
+        } else if (userList.contains(globalUser)) {
             //don't proceed, user already exists
             emailView.setError("This email is already registered to a user.");
             focusView = emailView;

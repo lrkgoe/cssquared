@@ -1,5 +1,6 @@
 package com.github.reachout;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +34,7 @@ public class MakeEventActivity extends AppCompatActivity {
                 String streetNo = houseAddress.getText().toString();
                 int zip = Integer.parseInt(zipCode.getText().toString());
                 String emailAddress = email.getText().toString();
-                int phone = Integer.parseInt(phoneNumber.getText().toString());
+                long phone = Long.parseLong(phoneNumber.getText().toString());
                 String eventSummary = summary.getText().toString();
                 int dateNo = Integer.parseInt(date.getText().toString());
                 int monthNo = Integer.parseInt(month.getText().toString()) - 1;
@@ -45,6 +46,8 @@ public class MakeEventActivity extends AppCompatActivity {
                 current.addNewEvent(newEvent);
                 EventManager manage = HomePageActivity.getEventManager();
                 manage.add(newEvent);
+                Intent i = new Intent(MakeEventActivity.this, UserProfileActivity.class);
+                startActivity(i);
 
             }
 

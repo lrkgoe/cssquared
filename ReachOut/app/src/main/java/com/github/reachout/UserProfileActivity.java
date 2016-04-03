@@ -14,6 +14,7 @@ public class UserProfileActivity extends AppCompatActivity {
         Button followedEvents = (Button) findViewById(R.id.followed_events_button);
         Button createdEvents = (Button) findViewById(R.id.created_events_button);
         Button eventList = (Button) findViewById(R.id.event_list_button);
+        Button makeEvent = (Button) findViewById(R.id.make_new_event_button);
 
         followedEvents.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,15 @@ public class UserProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(UserProfileActivity.this, ListOfEventsActivity.class);
+                startActivity(i);
+
+            }
+        });
+
+        makeEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserProfileActivity.this, MakeEventActivity.class);
                 startActivity(i);
 
             }
