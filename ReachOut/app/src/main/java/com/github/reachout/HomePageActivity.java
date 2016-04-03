@@ -65,11 +65,11 @@ public class HomePageActivity extends AppCompatActivity {
 
         //click guest button
         Button guestButton = (Button) findViewById(R.id.use_as_guest_button);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 globalUser = new User(null, null, 0);
-                Intent i = new Intent(HomePageActivity.this, UserProfileActivity.class);
+                Intent i = new Intent(HomePageActivity.this, ListOfEventsActivity.class);
                 startActivity(i);
             }
         });

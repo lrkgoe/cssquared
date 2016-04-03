@@ -56,7 +56,7 @@ public class ListOfEventsActivity extends AppCompatActivity {
 
     }
 
-    public Event getCurrentEvent() {
+    public static Event getCurrentEvent() {
         return currentEvent;
     }
 }
