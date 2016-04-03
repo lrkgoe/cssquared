@@ -47,13 +47,13 @@ public class EventDetailsActivity extends AppCompatActivity {
         numFollows.setText(followersString);
 
         //click follow button
-        Button followButton = (Button) findViewById(R.id.use_as_guest_button);
+        Button followButton = (Button) findViewById(R.id.button);
         followButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomePageActivity.getGlobalUser().addFollowedEvent(ListOfEventsActivity.getCurrentEvent());
                 ListOfEventsActivity.getCurrentEvent().addFollower();
-                Intent intent = new Intent(EventDetailsActivity.this, ListOfEventsActivity.class);
+                Intent intent = new Intent(EventDetailsActivity.this, UserProfileActivity.class);
                 startActivity(intent);
             }
         });
