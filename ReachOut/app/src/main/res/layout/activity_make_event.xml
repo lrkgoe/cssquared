@@ -23,133 +23,117 @@
         android:layout_marginTop="15dp"
         />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Name of Event"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="15"
+        android:id="@+id/name_editText"
+        android:autoText="false"
+        android:layout_below="@+id/title_textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
 
 
-    <ScrollView
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_alignBottom="@+id/title_textView"
-        android:layout_alignEnd="@+id/phone_number_editText"/>
+        android:hint="House Address"
+        android:ems="11"
+        android:id="@+id/house_address_editText"
+        android:layout_below="@+id/name_editText"
+        android:layout_alignEnd="@+id/name_editText"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Zip Code"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="4"
+        android:id="@+id/zip_code_editText"
+        android:autoText="false"
+        android:layout_below="@+id/name_editText"
+        android:layout_toStartOf="@+id/house_address_editText"
+        android:layout_marginTop="15dp"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:hint="Name of Event"
-            android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
-            android:ems="12"
-            android:id="@+id/name_editText"
-            android:autoText="false"
-            android:layout_below="@+id/title_textView"
-            android:layout_marginTop="15dp"
-            android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Email (optional)"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="7"
+        android:id="@+id/email_editText"
+        android:autoText="false"
+        android:layout_below="@+id/house_address_editText"
+        android:layout_toStartOf="@+id/phone_number_editText"
+        android:layout_marginTop="15dp"/>
 
-
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="House Address"
-            android:ems="8"
-            android:id="@+id/house_address_editText"
-            android:layout_alignTop="@+id/zip_code_editText"
-            android:layout_alignEnd="@+id/email_editText"
-            android:layout_toEndOf="@+id/zip_code_editText" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:hint="Email (optional)"
-            android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
-            android:ems="8"
-            android:id="@+id/email_editText"
-            android:autoText="false"
-            android:layout_alignTop="@+id/phone_number_editText"
-            android:layout_alignParentEnd="true" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:hint="Zip Code"
-            android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
-            android:ems="4"
-            android:id="@+id/zip_code_editText"
-            android:autoText="false"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/name_editText"
-            android:layout_alignParentStart="true"
-            android:layout_alignEnd="@+id/date_editText" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:hint="Phone Number"
-            android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
-            android:ems="12"
-            android:id="@+id/phone_number_editText"
-            android:autoText="false"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/zip_code_editText"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/email_editText" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Phone Number"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="8"
+        android:id="@+id/phone_number_editText"
+        android:autoText="false"
+        android:layout_above="@+id/summary_editText"
+        android:layout_alignEnd="@+id/house_address_editText"
+        android:layout_marginTop="15dp"/>
 
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:hint="Summary"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:ems="12"
-            android:id="@+id/summary_editText"
-            android:layout_below="@+id/phone_number_editText"
-            android:layout_marginTop="15dp"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/title_textView"
-            android:layout_alignEnd="@+id/email_editText" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Summary"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="12"
+        android:id="@+id/summary_editText"
+        android:layout_below="@+id/email_editText"
+        android:layout_alignStart="@+id/email_editText"
+        android:layout_alignEnd="@+id/phone_number_editText"
+        android:layout_marginTop="15dp"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:hint="Date (XX)"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="6"
-            android:id="@+id/date_editText"
-            android:layout_below="@+id/summary_editText"
-            android:layout_toRightOf="@+id/month_editText"
-            android:layout_centerVertical="true"
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Date(DD)"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="5"
+        android:id="@+id/date_editText"
+        android:layout_below="@id/summary_editText"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/summary_editText"
+        android:layout_marginTop="15dp"/>
 
-            android:layout_marginTop="15dp"
-            android:layout_toStartOf="@+id/title_textView" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/month_editText"
+        android:ems="5"
+        android:inputType="date"
+        android:hint="Month (MM)"
+        android:layout_alignTop="@+id/date_editText"
+        android:layout_toStartOf="@+id/year_editText" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create Event"
-            android:id="@+id/createEvent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/date_editText" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Year (YY)"
+        android:id="@+id/year_editText"
+        android:ems="5"
+        android:layout_above="@+id/createEvent"
+        android:layout_alignEnd="@+id/summary_editText" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/month_editText"
-            android:inputType="date"
-            android:hint="Month (ex. October)"
-            android:layout_alignTop="@+id/date_editText"
-            android:layout_toEndOf="@+id/year_editText" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Year (ex. 09)"
-            android:id="@+id/year_editText"
-            android:layout_marginTop="15dp"
-
-            android:layout_below="@+id/date_editText"
-            android:layout_alignParentStart="true" />
-
-
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Event"
+        android:id="@+id/createEvent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/month_editText"
+        android:layout_alignEnd="@+id/year_editText"
+        android:layout_marginTop="15dp"/>
 
 </RelativeLayout>
