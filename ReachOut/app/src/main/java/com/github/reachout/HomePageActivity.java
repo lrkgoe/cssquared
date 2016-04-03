@@ -31,6 +31,7 @@ public class HomePageActivity extends AppCompatActivity {
         userList.add(new User("2@", "p", 90867));
         userList.add(new User("1@", "p", 90867));
         userList.add(new User("0@", "p", 90867));
+        userList.add(new User("hw@gmail.com", "p", 90867));
 
         eventList = new EventManager();
         eventList.add(new Event("hjsbd", "askjnbda", 75857, "jhsbdk", 12, 12, 1987, "ihsbfb", 67563456));
@@ -68,6 +69,9 @@ public class HomePageActivity extends AppCompatActivity {
                 passwordView = (EditText) findViewById(R.id.password_editText);
                 password = passwordView.getText().toString();
                 globalUser = new User(email, password, 0);
+                if (globalUser == null) {
+                    throw new Error("1");
+                }
                 attemptRegister();
             }
         });
@@ -78,6 +82,9 @@ public class HomePageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 globalUser = new User(null, null, 0);
+                if (globalUser == null) {
+                    throw new Error("2");
+                }
                 Intent i = new Intent(HomePageActivity.this, ListOfEventsActivity.class);
                 startActivity(i);
 
@@ -128,6 +135,9 @@ public class HomePageActivity extends AppCompatActivity {
             focusView.requestFocus();
         } else {
             globalUser = userList.getUser(email);
+            if (globalUser == null) {
+                throw new Error("3");
+            }
             Intent i = new Intent(HomePageActivity.this, UserProfileActivity.class);
             startActivity(i);
         }
