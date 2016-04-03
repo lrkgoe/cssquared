@@ -43,7 +43,7 @@ public class User {
         String[] eventArr = new String[eventsFollowed.size()];
         for (int i = 0; i < eventsFollowed.size(); i++) {
             eventArr[i] = eventsFollowed.get(i).getName() + "\n\tDate: "
-                    + eventsFollowed.get(i).getDate();
+                    + eventsFollowed.get(i).getDateString();
         }
         return eventArr;
     }
@@ -52,7 +52,7 @@ public class User {
         String[] eventArr = new String[eventsCreated.size()];
         for (int i = 0; i < eventsCreated.size(); i++) {
             eventArr[i] = eventsCreated.get(i).getName() + "\n\tDate: "
-                    + eventsCreated.get(i).getDate();
+                    + eventsCreated.get(i).getDateString();
         }
         return eventArr;
     }
