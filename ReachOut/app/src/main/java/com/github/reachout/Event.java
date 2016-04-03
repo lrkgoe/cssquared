@@ -16,7 +16,7 @@ public class Event implements Comparable<Event> {
     private String summary;
     private Calendar date;
     private String email;
-    private int phoneNumber;
+    private long phoneNumber;
 
 
 
@@ -24,7 +24,7 @@ public class Event implements Comparable<Event> {
 
 
     public Event(String name, String streetAddress, int zip, String summary, Calendar date,
-                 String email, int phoneNumber) {
+                 String email, long phoneNumber) {
         this.streetAddress = streetAddress;
         this.zip = zip;
         this.summary = summary;
@@ -60,7 +60,7 @@ public class Event implements Comparable<Event> {
 
     public String getEmail() { return email; }
 
-    public int getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -84,7 +84,7 @@ public class Event implements Comparable<Event> {
         this.email = email;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
