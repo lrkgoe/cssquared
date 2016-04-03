@@ -10,7 +10,7 @@ public class EventManager {
     private static ArrayList<Event> eventList;
 
     public EventManager() {
-
+        eventList = new ArrayList<Event>();
     }
 
     public void add(Event event) {
