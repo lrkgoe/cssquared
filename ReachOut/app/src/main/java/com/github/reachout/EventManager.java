@@ -29,7 +29,7 @@ public class EventManager {
     public String[] toArray() {
         String[] eventArr = new String[eventList.size()];
         for (int i = 0; i < eventList.size(); i++) {
-            eventArr[i] = eventList.get(i).getName() + "\n\tDate: " + eventList.get(i).getDate();
+            eventArr[i] = eventList.get(i).getName() + "\n\tDate: " + eventList.get(i).getDateString();
         }
         return eventArr;
     }

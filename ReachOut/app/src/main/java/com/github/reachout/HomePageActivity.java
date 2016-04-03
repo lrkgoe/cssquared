@@ -26,8 +26,17 @@ public class HomePageActivity extends AppCompatActivity {
 
         //create a UserManager for the app
         userList = new UserManager();
+        userList.add(new User("4@", "p", 90867));
+        userList.add(new User("3@", "p", 90867));
+        userList.add(new User("2@", "p", 90867));
+        userList.add(new User("1@", "p", 90867));
+        userList.add(new User("0@", "p", 90867));
 
         eventList = new EventManager();
+        eventList.add(new Event("hjsbd", "askjnbda", 75857, "jhsbdk", 12, 12, 1987, "ihsbfb", 67563456));
+        eventList.add(new Event("hjsbd", "askjnbda", 75857, "jhsbdk", 12, 12, 1987, "ihsbfb", 67563456));
+        eventList.add(new Event("hjsbd", "askjnbda", 75857, "jhsbdk", 12, 12, 1987, "ihsbfb", 67563456));
+        eventList.add(new Event("hjsbd", "askjnbda", 75857, "jhsbdk", 12, 12, 1987, "ihsbfb", 67563456));
 
         //click sign in button
         Button loginButton = (Button) findViewById(R.id.sign_in_button);
